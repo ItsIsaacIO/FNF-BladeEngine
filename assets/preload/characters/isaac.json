@@ -1,0 +1,135 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				242,
+				-180
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "SingLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-380,
+				-110
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "SingDown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				104,
+				-123
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "SingUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				13,
+				-101
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "SingRight",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "hey",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				8
+			],
+			"anim": "hurt",
+			"fps": 24,
+			"name": "Dodge",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-44,
+				-20
+			],
+			"anim": "dodge",
+			"fps": 24,
+			"name": "DodgeAlt",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				694,
+				-3
+			],
+			"anim": "attack",
+			"fps": 24,
+			"name": "Attack",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "pre-attack",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Isaac",
+	"position": [
+		-200,
+		-10
+	],
+	"cameraFollowNotes": true,
+	"healthicon": "isaac",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		180,
+		0
+	],
+	"noteFile": "IsaacNotes",
+	"camera_position": [
+		210,
+		80
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
