@@ -175,7 +175,7 @@ class PlayState extends MusicBeatState
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
 
-	private var songNameBG:FlxSprite;
+	private var songNameBG:AttachedSprite;
 	private var songNameText:FlxText;
 
 	public var ratingsData:Array<Rating> = [];
@@ -391,12 +391,14 @@ class PlayState extends MusicBeatState
 		}
 		SONG.stage = curStage;
 
+		// MAKE THE LAST SONG CALLED "Overkill"
+
 		var settings:BGSettings = new BGSettings(curStage);
 
 		var bg:BGSprite = new BGSprite(settings.stagePath, 
 		settings.bgPos[0], // X Position
 		settings.bgPos[1], // Y Position
-		1, 1);
+		1, 1); // Dont touch this unless ur weird
 
 		add(bg);
 
@@ -446,18 +448,11 @@ class PlayState extends MusicBeatState
 				}
 		}
 
-		switch(Paths.formatToSongPath(SONG.song))
-		{
-			case 'stress':
-				GameOverSubstate.characterName = 'bf-holding-gf-dead';
-		}
-
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
 		}
 
-		add(gfGroup); //Needed for blammed lights
-
+		add(gfGroup);
 		add(dadGroup);
 		add(boyfriendGroup);
 
@@ -525,12 +520,7 @@ class PlayState extends MusicBeatState
 					gfVersion = 'gf';
 			}
 
-			switch(Paths.formatToSongPath(SONG.song))
-			{
-				case 'stress':
-					gfVersion = 'pico-speaker';
-			}
-			SONG.gfVersion = gfVersion; //Fix for the Chart Editor
+			SONG.gfVersion = gfVersion;
 		}
 
 		if (!settings.hideGF)
@@ -540,27 +530,6 @@ class PlayState extends MusicBeatState
 			gf.scrollFactor.set(1, 1);
 			gfGroup.add(gf);
 			startCharacterLua(gf.curCharacter);
-
-			if(gfVersion == 'pico-speaker')
-			{
-				if(!ClientPrefs.lowQuality)
-				{
-					var firstTank:TankmenBG = new TankmenBG(20, 500, true);
-					firstTank.resetShit(20, 600, true);
-					firstTank.strumTime = 10;
-					tankmanRun.add(firstTank);
-
-					for (i in 0...TankmenBG.animationNotes.length)
-					{
-						if(FlxG.random.bool(16)) {
-							var tankBih = tankmanRun.recycle(TankmenBG);
-							tankBih.strumTime = TankmenBG.animationNotes[i][0];
-							tankBih.resetShit(500, 200 + FlxG.random.int(50, 100), TankmenBG.animationNotes[i][1] < 2);
-							tankmanRun.add(tankBih);
-						}
-					}
-				}
-			}
 		}
 
 		dad = new Character(0, 0, SONG.player2);
@@ -612,7 +581,7 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.downScroll) strumLine.y = FlxG.height - 150;
 		strumLine.scrollFactor.set();
 
-		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
+		var showTime:Bool = true;
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
@@ -621,10 +590,6 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = showTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
 
-		if(ClientPrefs.timeBarType == 'Song Name')
-		{
-			timeTxt.text = SONG.song;
-		}
 		updateTime = showTime;
 
 		timeBarBG = new AttachedSprite('timeBar');
@@ -649,32 +614,29 @@ class PlayState extends MusicBeatState
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
 
-		songNameText = new FlxText(timeTxt.x, timeTxt.y - 40, 400, curSong, 32);
-		songNameText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		songNameText = new FlxText(timeTxt.x, timeTxt.y - 20, 400, SONG.song, 24);
+		songNameText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		songNameText.scrollFactor.set();
 		songNameText.alpha = 0;
 		songNameText.borderSize = 2;
-		songNameText.visible = true;
+		songNameText.visible = showTime;
 
-		songNameBG = new FlxSprite('songNameBar');
+		songNameBG = new AttachedSprite('songNameBar');
 		songNameBG.x = songNameText.x;
 		songNameBG.y = songNameText.y + (songNameText.height / 4);
 		songNameBG.scrollFactor.set();
 		songNameBG.alpha = 0;
-		songNameBG.visible = true;
-		songNameBG.color = FlxColor.BLACK;
+		songNameBG.visible = showTime;
+		songNameBG.antialiasing = false;
+		//songNameBG.color = FlxColor.BLACK;
+		timeBarBG.xAdd = -4;
+		timeBarBG.yAdd = -4;
 		add(songNameBG);
 		add(songNameText);
 
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(strumLineNotes);
 		add(grpNoteSplashes);
-
-		if(ClientPrefs.timeBarType == 'Song Name')
-		{
-			timeTxt.size = 24;
-			timeTxt.y += 3;
-		}
 
 		var splash:NoteSplash = new NoteSplash(100, 100, 0);
 		grpNoteSplashes.add(splash);
@@ -1941,6 +1903,9 @@ class PlayState extends MusicBeatState
 		FlxTween.tween(timeBar, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 
+		FlxTween.tween(songNameBG, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
+		FlxTween.tween(songNameText, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
+
 		switch(curStage)
 		{
 			case 'tank':
@@ -2544,17 +2509,14 @@ class PlayState extends MusicBeatState
 					songPercent = (curTime / songLength);
 
 					var songCalc:Float = (songLength - curTime);
-					if(ClientPrefs.timeBarType == 'Time Elapsed') songCalc = curTime;
+					songCalc = curTime;
 
 					var secondsTotal:Int = Math.floor(songCalc / 1000);
 					if(secondsTotal < 0) secondsTotal = 0;
 
-					if(ClientPrefs.timeBarType != 'Song Name')
-						timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
+					timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
 				}
 			}
-
-			// Conductor.lastSongPos = FlxG.sound.music.time;
 		}
 
 		if (camZooming)
