@@ -10,9 +10,9 @@
 	],
 	"weekBackground": "street",
 
-	"storyName": "Gold Sword Man",
+	"storyName": "Golden Sword Man",
 	"weekBefore": "tutorial",
-	"weekName": "Isaac Week",
+	"weekName": "Isaac's Week",
 	"startUnlocked": true,
 
 	"hideStoryMode": false,
