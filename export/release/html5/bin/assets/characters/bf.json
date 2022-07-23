@@ -1,0 +1,267 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				-13,
+				-2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "SingLeft"
+		},
+		{
+			"offsets": [
+				-42,
+				-53
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "SingDown"
+		},
+		{
+			"offsets": [
+				-79,
+				50
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "SingUp"
+		},
+		{
+			"offsets": [
+				-75,
+				-6
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "SingRight"
+		},
+		{
+			"offsets": [
+				-23,
+				39
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "MissLeft"
+		},
+		{
+			"offsets": [
+				-65,
+				-19
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "MissDown"
+		},
+		{
+			"offsets": [
+				-86,
+				27
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "MissUp"
+		},
+		{
+			"offsets": [
+				-114,
+				22
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "MissRight"
+		},
+		{
+			"offsets": [
+				-56,
+				-22
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hurt",
+			"indices": [],
+			"name": "Dodge"
+		},
+		{
+			"offsets": [
+				-54,
+				-30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "scared",
+			"indices": [],
+			"name": "Dodge"
+		},
+		{
+			"offsets": [
+				37,
+				11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "Death"
+		},
+		{
+			"offsets": [
+				37,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "Dead"
+		},
+		{
+			"offsets": [
+				37,
+				69
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "Retry"
+		},
+		{
+			"offsets": [
+				-14,
+				-30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodge",
+			"indices": [],
+			"name": "DodgeAlt"
+		},
+		{
+			"offsets": [
+				697,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "attack",
+			"indices": [],
+			"name": "Attack"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "pre-attack",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				-30,
+				4
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "Hey"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				11,
+				7
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "SingAltLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-24,
+				26
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "SingAltRight",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-58,
+				55
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "SingAltUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-50
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "SingAltDown",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/BOYFRIEND",
+	"position": [
+		0,
+		350
+	],
+	"cameraFollowNotes": true,
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"noteFile": "BoyfriendNotes",
+	"camera_position": [
+		390,
+		40
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

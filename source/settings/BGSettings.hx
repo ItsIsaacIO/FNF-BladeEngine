@@ -22,6 +22,9 @@ typedef StageFile = {
     var directory:String;
 	var defaultZoom:Float;
 
+	var antialiasing:Bool;
+	var scale:Float;
+
 	var stagePos:Array<Float>;
 	var boyfriendPos:Array<Float>;
 	var girlfriendPos:Array<Float>;
@@ -34,23 +37,26 @@ class BGSettings
 	public var stagePath:String;
 	public var stageZoom:Float;
 
+	public var stageAntialiasing:Bool;
+	public var stageScale:Float;
+
 	public var bgPos:Array<Dynamic>;
 	public var bfPos:Array<Dynamic>;
 	public var gfPos:Array<Dynamic>;
 	public var dadPos:Array<Dynamic>;
 	public var hideGF:Bool;
 
+	public static var DEFAULT_STAGE = 'stageback';
+
 	public function new(stage:String = 'stage') 
 	{
-		var aniCrashStage = 'stageback';
-
 		// Easy Loading
 		var daStagePath:String = 'stages/' + stage + '.json';
 
 		var path:String = Paths.getPreloadPath(daStagePath);
 		if (!Assets.exists(path))
 		{
-			path = Paths.getPreloadPath('stages/' + aniCrashStage + '.json'); // Makes the background "stage" if no background is found
+			path = Paths.getPreloadPath('stages/' + DEFAULT_STAGE + '.json'); // Makes the background "stage" if no background is found
 		}
 
 		var rawJson = Assets.getText(path);
@@ -59,6 +65,9 @@ class BGSettings
 
 		stagePath = json.directory;
 		stageZoom = json.defaultZoom;
+
+		stageAntialiasing = json.antialiasing;
+		stageScale = json.scale;
 
 		bgPos = json.stagePos;
 		bfPos = json.boyfriendPos;

@@ -2,6 +2,9 @@
 	"directory": "backgrounds/stageback",
 	"defaultZoom": 0.9,
 
+	"antialiasing": true,
+	"scale": 1,
+
 	"stagePos": [-600, -200],
 	"boyfriendPos": [770, 100],
 	"girlfriendPos": [400, 130],

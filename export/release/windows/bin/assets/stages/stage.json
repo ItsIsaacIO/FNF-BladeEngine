@@ -1,0 +1,10 @@
+{
+	"directory": "backgrounds/stageback",
+	"defaultZoom": 0.9,
+
+	"stagePos": [-600, -200],
+	"boyfriendPos": [770, 100],
+	"girlfriendPos": [400, 130],
+	"opponentPos": [100, 100],
+	"hide_girlfriend": false
+}

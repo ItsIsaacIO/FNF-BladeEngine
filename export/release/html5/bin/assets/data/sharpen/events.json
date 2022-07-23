@@ -1,0 +1,108 @@
+{
+	"song": {
+		"speed": 3,
+		"stage": "street",
+		"player1": "bf",
+		"player2": "isaac",
+		"events": [
+			[
+				0,
+				[
+					[
+						"Tween Cam Zoom",
+						"1.4",
+						"13"
+					]
+				]
+			],
+			[
+				13125,
+				[
+					[
+						"Tween Cam Zoom",
+						"1.5",
+						"0.1"
+					]
+				]
+			],
+			[
+				15000,
+				[
+					[
+						"Tween Cam Zoom",
+						"1",
+						"0.1"
+					]
+				]
+			],
+			[
+				29531.25,
+				[
+					[
+						"Tween Cam Zoom",
+						"1.2",
+						"0.1"
+					]
+				]
+			],
+			[
+				30000,
+				[
+					[
+						"Tween Cam Zoom",
+						"1",
+						"0.1"
+					]
+				]
+			],
+			[
+				30117.1875,
+				[
+					[
+						"Tween Cam Zoom",
+						"0.8",
+						"7.5"
+					]
+				]
+			],
+			[
+				45000,
+				[
+					[
+						"Screen Shake",
+						"14, 0.0025",
+						"14, 0.001"
+					]
+				]
+			],
+			[
+				59531.25,
+				[
+					[
+						"Tween Cam Zoom",
+						"1.6",
+						"0.1"
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"Tween Cam Zoom",
+						"1",
+						"0.1"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 128,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Sharpen"
+	}
+}

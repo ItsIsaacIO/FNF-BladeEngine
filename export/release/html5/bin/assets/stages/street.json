@@ -1,0 +1,10 @@
+{
+	"directory": "backgrounds/street",
+	"defaultZoom": 0.8,
+
+	"stagePos": [-700, -600],
+	"boyfriendPos": [770, 100],
+	"girlfriendPos": [400, 130],
+	"opponentPos": [100, 100],
+	"hide_girlfriend": false
+}

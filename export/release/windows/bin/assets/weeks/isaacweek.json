@@ -1,0 +1,20 @@
+{
+	"songs": [
+		["Sharpen", "isaac", [165, 0, 77]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"isaac"
+	],
+	"weekBackground": "street",
+
+	"storyName": "Golden Sword Man",
+	"weekBefore": "tutorial",
+	"weekName": "Isaac's Week",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}
